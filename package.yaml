@@ -1,0 +1,31 @@
+name: azure-application-insights
+version: 0.1.0.0
+github: "Gipphe/azure-application-insights"
+license: BSD3
+author: "Victor Nascimento Bakke"
+copyright: "2021 Victor Nascimento Bakke"
+
+extra-source-files:
+  - README.md
+  - CHANGELOG.md
+
+description: |
+  Please see the README on GitHub at
+  <https://github.com/Gipphe/azure-application-insights#readme>
+
+dependencies:
+  - base >= 4.7 && < 5
+
+library:
+  source-dirs: src
+
+tests:
+  azure-application-insights-test:
+    main: Spec.hs
+    source-dirs: test
+    ghc-options:
+      - -threaded
+      - -rtsopts
+      - -with-rtsopts=-N
+    dependencies:
+      - azure-application-insights
