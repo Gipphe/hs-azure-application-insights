@@ -26,13 +26,24 @@ source-repository head
 
 library
   exposed-modules:
-      Lib
+      Azure.ApplicationInsights
+      Azure.ApplicationInsights.BaseTelemetry
+      Azure.ApplicationInsights.Data
+      Azure.ApplicationInsights.Envelope
+      Azure.ApplicationInsights.Event
+      Azure.ApplicationInsights.InstrumentationKey
+      Azure.ApplicationInsights.Telemetry
+      Azure.ApplicationInsights.TelemetryClient
+      Azure.ApplicationInsights.TelemetryType
   other-modules:
       Paths_azure_application_insights
   hs-source-dirs:
       src
   build-depends:
-      base >=4.7 && <5
+      aeson
+    , base >=4.7 && <5
+    , containers
+    , req
   default-language: Haskell2010
 
 test-suite azure-application-insights-test
@@ -44,6 +55,9 @@ test-suite azure-application-insights-test
       test
   ghc-options: -threaded -rtsopts -with-rtsopts=-N
   build-depends:
-      azure-application-insights
+      aeson
+    , azure-application-insights
     , base >=4.7 && <5
+    , containers
+    , req
   default-language: Haskell2010
